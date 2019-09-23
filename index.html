@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
+    <style>
+        body {
+            background-color: rgb(120, 51, 177);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="text-white" class="container mt-5">
+      <div class="row">
+        <!----Header-->
+        <div class="col-md-12 text-center page-header">
+          <h1>Todo List</h1>
+        </div>
+        <div class="col-md-12 text-center">
+            <h3>Add your first to do</h3>
+            <p>What did you want to get done today</p>
+        <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="InputText" aria-describedby="todoHelp" placeholder="E.g. Go for shopping">
+              <small id="todoHelp" class="text-white" class="form-text text-muted">Don't miss that important task add it NOW!.</small>
+            </div>
+        </div>
+        <div class="form-inline">
+                <label for="example-date-input" class="col-2 col-form-label"><b>Start date:</b></label>
+                <div class="col-9">
+                    <input class="form-control mb-2 mr-sm-2" type="date" value="Date" id="example-date-input">
+                </div>
+                <label for="example-date-input" class="col-2 col-form-label"><b>End date:</b></label>
+                <div class="col-9">
+                    <input class="form-control mb-2 mr-sm-2" type="date" value="Date" id="example-date-input">
+                </div>
+                <label for="example-date-input" class="col-2 col-form-label"><b>Date created:</b></label>
+                <div class="col-9">
+                    <input class="form-control mb-2 mr-sm-2" type="date" value="Date" id="example-date-input">
+                </div>
+        </div>
+      <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </text-center">
+    </div>
+    </div>
+
+    <script src="./bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
