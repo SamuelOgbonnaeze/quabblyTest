@@ -5,10 +5,11 @@ import '../../../src/signup.css'
 import { connect } from 'react-redux'
 import {setAlert} from '../../actions/alert' // import the action to be used in this component
 import PropTypes from 'prop-types'
+import {register} from '../../actions/auth'
 
 const Signup = (props) => {
 
-    const { setAlert } = props;
+    const { setAlert, register } = props;
 
     const [formData, setFormData] = useState({
         name: "",
@@ -26,7 +27,8 @@ const Signup = (props) => {
         e.preventDefault();
         if(password !== password2){
             setAlert("password do not Match", 'danger') // instead of just alert(password dont match)
-        } else{
+        } else {
+            register({ name, email, password })
             
             // An example of how to make a request inside the component else Redux can handle it.
 
@@ -67,23 +69,23 @@ const Signup = (props) => {
                 <div class="form-group">
                     <label for="Name"></label>
                     <input type="Name" value={name} name="name" class="form-control" id="Name" placeholder="Name"
-                    onChange={(e)=> onChange(e)} required/>
+                    onChange={(e)=> onChange(e)} />
   </div>
                     <div class="form-group">
                         <label for="pwd"></label>
                         <input type="Email" value={email} name="email" class="form-control" id="Email" 
-                        onChange={(e) => onChange(e) } placeholder="Email Address" required/>
+                        onChange={(e) => onChange(e) } placeholder="Email Address" />
                 </div>
                 <div class="form-group">
                     <label for="pwd"></label>
                     <input type="password" name="password" value={password} class="form-control" id="Password" 
-                    onChange={(e) =>onChange(e) } placeholder="Password" required />
+                    onChange={(e) =>onChange(e) } placeholder="Password"  />
                     <small class="form-text">This site uses Gravatar so if you want a profile image, Use a Gravatar email</small>
                 </div>
                 <div class="form-group">
                     <label for="pwd"></label>
                     <input type="password" class="form-control" value={password2} name="password2" id="password2" 
-                    onChange={(e) =>onChange(e)} placeholder="Confirm Password" required/>
+                    onChange={(e) =>onChange(e)} placeholder="Confirm Password" />
                 </div>
                         <div class="checkbox">
                             <label><input type="checkbox"/> Remember me</label>
@@ -96,7 +98,8 @@ const Signup = (props) => {
 }
 
 Signup.propTypes = {
-    setAlert: PropTypes.func.isRequired  // proptypes are used to validate the props used in the component
+    setAlert: PropTypes.func.isRequired, // proptypes are used to validate the props used in the component
+    register: PropTypes.func.isRequired
 }
 
-export default connect(null, {setAlert})(Signup);
+export default connect(null, {setAlert, register})(Signup);

@@ -31,3 +31,10 @@
     transform: rotate(360deg);
   }
 }
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger{
+background: var(--danger-color);
+color: #fff;
+}
